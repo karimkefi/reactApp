@@ -6,7 +6,7 @@ class App extends Component {
   state = {
     characters : [
       {name: 'Mario', age:30, vehicle: 'Kart', id:1},
-      {name: 'Yoshi', age:25, vehicle:'Shell', id:2},
+      {name: 'Yoshi', age:18, vehicle:'Shell', id:2},
       {name: 'Princess Peach', age:28, vehicle: 'Carriage', id:3}
     ]
   }
