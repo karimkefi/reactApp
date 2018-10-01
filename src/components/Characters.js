@@ -25,7 +25,7 @@ const Characters = ({characters}) => {
   //
   // })
 
-  //OPTION2
+  //OPTION2 - using ternary operator
   const characterList = characters.map(char => {
     return char.age > 20
       ? (<div className="nav" key={char.id}>

@@ -16,10 +16,11 @@ class addCharacter extends Component {
         })
     }
 
-    //this is capturing the state of the component on Form Submit
+    //this function is capturing the state of the component on Form Submit
+    // it is using the parent's (App.js) prop function to add component's state to parent's state
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.addCharacterToApp(this.state)
     }
 
     render () {
