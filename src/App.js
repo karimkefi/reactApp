@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   //this function is updating App.js state but is also 
-  // being passed down to the component as a prop (to eventually get data from component)
+  //being passed down to the component as a prop (to eventually get data from component)
   addCharacterToApp = (character) => {
     character.id = Math.random();
 
@@ -27,12 +27,27 @@ class App extends Component {
     })
   }
 
+  //this function is deleting an Object based on its id
+  //however this is done using a filter (does not affect state) and returns a new filtered array
+  deleteCharacter = (id) => {
+    // console.log(id);
+
+    //filter function cycles through and array and fileters out items which do not fufill the callback function.
+    let charactersCC = this.state.characters.filter(character => {
+      return character.id !== id
+    })
+    
+    this.setState({
+      characters: charactersCC
+    })
+  }
+
   render() {
     return (
       <div className="App">
        <h1>My React app</h1>
         <h3>Welcome</h3>
-        <Characters characters={this.state.characters}/>
+        <Characters characters={this.state.characters} deleteCharacter={this.deleteCharacter}/>
         <AddCharacter addCharacterToApp={this.addCharacterToApp} />
       </div>
     );
