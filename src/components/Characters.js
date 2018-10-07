@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-// props are being passed down from App.js... here we are calling the props {characters, deleteCharacter}
-// multiple props then comma delimit them {characters, films, etc...}
+// props are being passed down from App.js... 
+// here we are using the props Array of characters and function deleteCharacter
 const Characters = ({characters, deleteCharacter}) => {
 
   //for each item in the characters Array, return a new array of JSX
@@ -18,9 +18,7 @@ const Characters = ({characters, deleteCharacter}) => {
         </div>)
       : (null)
   })
-
-  console.log('Component Props here:', this.props);
-
+  
   return (
     <div className="character-list">
       { characterList }

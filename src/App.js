@@ -20,7 +20,7 @@ class App extends Component {
     //this is using the spread (...) attribute inside a new array []
     //spread takes the objects from characters as elements in the new array (thus creating a copy of characters[])
     let charactersCC = [...this.state.characters, character]
-    
+
     //new characters[] created above via spread operator + new character
     this.setState({
       characters: charactersCC
@@ -40,6 +40,16 @@ class App extends Component {
     this.setState({
       characters: charactersCC
     })
+  }
+
+  //this is a lifecycle hook
+  componentDidMount () {
+      console.log('component mounted')
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    console.log('component updates');
+    console.log('Prev State:', prevState);
   }
 
   render() {
